@@ -8,16 +8,15 @@
 #include "lwip/err.h"
 #include "lwip/sys.h"
 
-#define WIFI_SSID           "MTXINTERN10_5211"
-#define WIFI_PASSWORD       "Y4427|h9"
+#define WIFI_SSID "########"
+#define WIFI_PASSWORD "########"
 #define WIFI_MAX_CONN_RETRY 5
 #define WIFI_SCAN_AUTH_MODE "WPA2 PSK"
-#define WIFI_SAE_MODE       "BOTH" // Use "Hunt and Peck" and "H2E"
+#define WIFI_SAE_MODE "BOTH" // Use "Hunt and Peck" and "H2E"
 #define WIFI_H2E_IDENTIFIER ""
 
 static const char *TAG = "socket";
 static int retry_num = 0;
-
 
 void wifi_init_sta(void)
 {
@@ -63,7 +62,7 @@ void wifi_init_sta(void)
 
 void try_connection(void)
 {
-    while(retry_num < WIFI_MAX_CONN_RETRY)
+    while (retry_num < WIFI_MAX_CONN_RETRY)
     {
         ESP_LOGI(TAG, "retrying AP connection");
         esp_wifi_connect();
@@ -106,8 +105,7 @@ void try_connection(void)
 //     return;
 // }
 
-
-void app_main(void) 
+void app_main(void)
 {
     // Initialize non-volatile storage partition
     esp_err_t returnStatus = nvs_flash_init();
